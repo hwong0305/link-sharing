@@ -1,0 +1,32 @@
+.button__secondary__border-primary {
+  border-color: #633cff;
+}
+
+.button__secondary:hover {
+  background-color: #efebff;
+}
+
+.tab__active {
+  color: #633cff;
+  background-color: #efebff;
+}
+
+.button__primary {
+  color: #633cff;
+}
+
+.button__primary:hover {
+  background-color: #efebff;
+}
+
+.button__primary-border-primary {
+  border-color: #633cff;
+}
+
+.navbar__tab-text {
+  color: #737373;
+}
+
+.navbar__tab-text.primary {
+  color: #633cff;
+}
