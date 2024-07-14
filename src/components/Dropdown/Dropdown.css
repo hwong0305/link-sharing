@@ -1,0 +1,7 @@
+.selected-option {
+  color: #633cff;
+}
+
+.option__divider {
+  border-bottom: solid 1px #737373;
+}

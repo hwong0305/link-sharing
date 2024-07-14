@@ -1,0 +1,53 @@
+:root {
+  --primary-color: #633cff;
+  background-color: #fafafa;
+}
+
+h1 {
+  font-family: 'Instrument Sans';
+  color: #333333;
+}
+
+.main__gray-text {
+  color: #737373;
+}
+
+.main__button-outline {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.main__button-outline:hover {
+  background-color: #efebff;
+}
+
+.main__card {
+  background-color: #fafafa;
+}
+
+.main__button-primary {
+  color: #fff;
+  background-color: #633cff;
+}
+
+.main__button-primary:hover:enabled {
+  background-color: #beadff;
+}
+
+.main__button-primary:disabled {
+  cursor: auto;
+  opacity: 0.25;
+}
+
+.phone__link {
+  /* Since the template is position relative to the center. The only way to make it consistent is to positon from the center with hard coded pixels since those won't change because it's dependent on the svg and no the view size */
+  top: 50%;
+  left: 50%;
+  transform: translateX(-120px) translateY(-40px);
+}
+
+.hehe {
+  background-image: url('assets/illustration-phone-mockup.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}

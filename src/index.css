@@ -1,3 +1,49 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .devlinks__primary-color {
+    color: #633cff;
+  }
+
+  .devlinks__primary-color-2 {
+    color: #beadff;
+  }
+
+  .devlinks__secondary-color {
+    color: #737373;
+  }
+
+  .devlinks__secondary-color-2 {
+    color: #d9d9d9;
+  }
+
+  .devlinks__primary-background {
+    background-color: #633cff;
+  }
+
+  .devlinks__primary-background-2 {
+    background-color: #beadff;
+  }
+
+  .devlinks__primary-background-3 {
+    background-color: #effbff;
+  }
+
+  .devlinks__secondary-background {
+    background-color: #737373;
+  }
+
+  .devlinks__secondary-background-2 {
+    background-color: #d9d9d9;
+  }
+
+  .devlinks__secondary-background-3 {
+    background-color: #fafafa;
+  }
+
+  .svg__primary {
+    filter: invert(0.5) sepia(1) saturate(50) hue-rotate(240deg);
+  }
+}
