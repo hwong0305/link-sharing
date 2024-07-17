@@ -40,9 +40,15 @@ function App() {
           <div className="mx-auto max-w-3xl h-full p-6 bg-white shadow flex justify-center items-center hehe relative">
             <div className="absolute phone__link">
               <ul className="space-y-5">
-                <PreviewLink type="GitHub">김민정</PreviewLink>
-                <PreviewLink type="Twitter">강혜원</PreviewLink>
-                <PreviewLink type="Facebook">강예서</PreviewLink>
+                <PreviewLink type="GitHub">
+                  <span>김민정</span>
+                </PreviewLink>
+                <PreviewLink type="Twitter">
+                  <span>강혜원</span>
+                </PreviewLink>
+                <PreviewLink type="Facebook">
+                  <span>강예서</span>
+                </PreviewLink>
               </ul>
             </div>
           </div>
