@@ -1,10 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
+import { createBrowserRouter, redirect, RouterProvider } from 'react-router-dom';
 import './index.css';
+import Dashboard from './pages/Dashboard/Dashboard.jsx';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    loader: () => {
+      return redirect('/dashboard');
+    },
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard />,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>
 );

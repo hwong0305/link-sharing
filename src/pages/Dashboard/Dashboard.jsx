@@ -1,10 +1,10 @@
 import { Bars2Icon } from '@heroicons/react/20/solid';
 import { useState } from 'react';
-import './App.css';
-import Dropdown from './components/Dropdown/Dropdown';
-import Navbar from './components/Navbar/Navbar';
-import PreviewLink from './components/PreviewLink/PreviewLink';
-import { platforms } from './lib/constants';
+import Dropdown from '../../components/Dropdown/Dropdown';
+import Navbar from '../../components/Navbar/Navbar';
+import PreviewLink from '../../components/PreviewLink/PreviewLink';
+import { platforms } from '../../lib/constants';
+import './Dashboard.css';
 
 function App() {
   const [dirty, setDirty] = useState(false);

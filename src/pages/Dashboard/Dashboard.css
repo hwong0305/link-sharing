@@ -47,7 +47,7 @@ h1 {
 }
 
 .hehe {
-  background-image: url('assets/illustration-phone-mockup.svg');
+  background-image: url('src/assets/illustration-phone-mockup.svg');
   background-repeat: no-repeat;
   background-position: center;
 }
