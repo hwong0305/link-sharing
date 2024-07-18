@@ -2,20 +2,36 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../../assets/logo-devlinks-large.svg';
+import Alert from '../../components/Alert/Alert';
 import auth from '../../firebase';
 
 export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmed] = useState('');
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   async function handleFormSubmit(e) {
     e.preventDefault();
     try {
+      if (password !== confirmPassword) {
+        setErrorMessage('Password and Confirm Password does not match');
+        setError(true);
+        setTimeout(() => {
+          setError(false);
+        }, 4000);
+        return;
+      }
       await createUserWithEmailAndPassword(auth, email, password);
       return navigate('/dashboard');
     } catch (e) {
+      setErrorMessage('Error creating account. Please try again or contact support.');
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 4000);
       console.error(e);
     }
   }
@@ -30,6 +46,11 @@ export default function Register() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+          {error && (
+            <Alert>
+              <>{errorMessage}</>
+            </Alert>
+          )}
           <form method="POST" onSubmit={handleFormSubmit} className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -65,7 +86,7 @@ export default function Register() {
                   required
                   value={password}
                   onChange={e => setPassword(e.target.value)}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>

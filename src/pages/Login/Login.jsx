@@ -35,7 +35,11 @@ export default function Login() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          {error && <Alert />}
+          {error && (
+            <Alert>
+              <>Invalid email / password combination</>
+            </Alert>
+          )}
           <form onSubmit={handleSubmitForm} method="POST" className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
