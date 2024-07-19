@@ -1,16 +1,31 @@
 import { Bars2Icon } from '@heroicons/react/20/solid';
-import { useState } from 'react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import Navbar from '../../components/Navbar/Navbar';
 import PreviewLink from '../../components/PreviewLink/PreviewLink';
 import { platforms } from '../../lib/constants';
 import './Dashboard.css';
 
+function useLogin() {
+  const auth = getAuth();
+  const navigate = useNavigate();
+  useEffect(() => {
+    onAuthStateChanged(auth, user => {
+      if (!user) {
+        return navigate('/login');
+      }
+    });
+  }, []);
+}
+
 function App() {
   const [dirty, setDirty] = useState(false);
   const [activeTab, setTab] = useState('link');
   const [data, setData] = useState([]);
 
+  useLogin();
   const addLink = () => {
     const clone = [...data];
     clone.push({
